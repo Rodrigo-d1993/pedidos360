@@ -1,0 +1,5 @@
+# Este .gitignore es solo para archivos sueltos en la raíz.
+# Cada subproyecto (backend/ms-productos, backend/ms-pedidos, frontend)
+# tiene su propio .gitignore específico para su tecnología.
+.DS_Store
+*.env
