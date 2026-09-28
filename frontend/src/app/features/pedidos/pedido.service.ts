@@ -6,11 +6,13 @@ import { environment } from '../../../environments/environment';
 export interface DetallePedido {
   productoId: number;
   cantidad: number;
+  precioUnitario?: number;
 }
 
 export interface Pedido {
   id?: number;
   clienteId: string;
+  fecha?: string;
   estado?: string;
   items: DetallePedido[];
 }

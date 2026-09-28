@@ -39,4 +39,19 @@ export class AuthService {
       return null;
     }
   }
+
+  // Texto para mostrar en la barra superior: el email si existe, si no el username
+  async getUserLabel(): Promise<string> {
+    try {
+      const session = await fetchAuthSession();
+      const email = session.tokens?.idToken?.payload?.['email'];
+      if (typeof email === 'string' && email) {
+        return email;
+      }
+      const user = await getCurrentUser();
+      return user.username;
+    } catch {
+      return '';
+    }
+  }
 }

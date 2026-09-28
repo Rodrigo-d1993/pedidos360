@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './core/auth/auth.guard';
+import { LoginComponent } from './features/login/login.component';
 import { PedidosComponent } from './features/pedidos/pedidos.component';
 import { ProductosComponent } from './features/productos/productos.component';
 
@@ -8,6 +9,8 @@ import { ProductosComponent } from './features/productos/productos.component';
 // una ruta /callback dedicada como con un flujo OIDC manual.
 export const routes: Routes = [
   { path: '', redirectTo: 'productos', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
   { path: 'productos', component: ProductosComponent, canActivate: [authGuard] },
   { path: 'pedidos', component: PedidosComponent, canActivate: [authGuard] },
+  { path: '**', redirectTo: 'productos' },
 ];

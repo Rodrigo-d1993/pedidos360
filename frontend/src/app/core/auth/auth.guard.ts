@@ -10,6 +10,6 @@ export const authGuard: CanActivateFn = async () => {
     return true;
   }
 
-  await auth.login(); // redirige al Hosted UI de Cognito
-  return false;
+  // Sin sesión: se muestra la página de login (con el botón hacia Cognito)
+  return router.createUrlTree(['/login']);
 };

@@ -1,6 +1,244 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
   background: #f5f6fa;
   color: #222;
+}
+
+/* ---------- Barra superior ---------- */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 24px;
+  background: #1f2a44;
+  color: #fff;
+}
+
+.topbar .brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+.topbar .brand span,
+.login-card h1 span {
+  color: #f5a623;
+}
+
+.topbar nav {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+}
+
+.topbar nav a {
+  color: #cfd6e6;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.topbar nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.topbar nav a.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.topbar .user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+  font-size: 0.9rem;
+}
+
+/* ---------- Layout ---------- */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+/* ---------- Botones ---------- */
+.btn {
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: #f5a623;
+  color: #1f2a44;
+  font-weight: 600;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #e0951a;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-danger {
+  background: #d9534f;
+  color: #fff;
+  margin-top: 8px;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: #c9302c;
+}
+
+/* ---------- Tarjetas ---------- */
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+.producto-card h3 {
+  margin: 0 0 6px;
+}
+
+.producto-card .desc {
+  color: #666;
+  font-size: 0.9rem;
+  min-height: 40px;
+}
+
+.producto-card .precio {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1f2a44;
+  margin: 10px 0 2px;
+}
+
+.producto-card .stock {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.producto-card .btn {
+  width: 100%;
+}
+
+/* ---------- Pedidos ---------- */
+.pedido-card {
+  margin-bottom: 16px;
+}
+
+.pedido-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.pedido-head .fecha {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: #e8eefc;
+  color: #2b4c9b;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+table.tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.tabla th,
+table.tabla td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+table.tabla th {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.total {
+  text-align: right;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+/* ---------- Login ---------- */
+.login-wrap {
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+}
+
+.login-card {
+  text-align: center;
+  max-width: 380px;
+  width: 100%;
+  padding: 36px 28px;
+}
+
+.login-card h1 {
+  margin: 0 0 12px;
+  font-size: 2rem;
+}
+
+.login-card p {
+  color: #555;
+}
+
+/* ---------- Mensajes ---------- */
+.error {
+  background: #fdecea;
+  color: #a12a1f;
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-bottom: 14px;
+}
+
+.info {
+  color: #777;
 }

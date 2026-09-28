@@ -11,7 +11,7 @@ export function configureAmplify(): void {
         loginWith: {
           oauth: {
             domain: environment.cognito.domain,
-            scopes: ['openid', 'email', 'profile'],
+            scopes: ['openid', 'email', 'profile', 'resource-server-pedidos360/pedidos-api-read'],
             redirectSignIn: [environment.cognito.redirectSignIn],
             redirectSignOut: [environment.cognito.redirectSignOut],
             responseType: 'code', // Authorization Code + PKCE
