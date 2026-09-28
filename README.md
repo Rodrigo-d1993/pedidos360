@@ -143,7 +143,6 @@ La app usa **AWS Amplify** (`aws-amplify/auth`) para el login vía Hosted UI de 
 
 - **Validación del JWT:** se realiza únicamente en API Gateway mediante el Cognito Authorizer. Los microservicios no vuelven a validar el token: la capa de Defense in Depth (Spring Security como Resource Server) quedó fuera del alcance de esta etapa.
 - **Acceso directo al backend:** como API Gateway usa una integración HTTP pública hacia la EC2, los puertos 8081 y 8082 están abiertos en el Security Group, por lo que el backend puede invocarse directamente sin pasar por API Gateway. Para un entorno productivo se recomendaría una integración privada (VPC Link) y validar el JWT también en el backend.
-- **Token enviado por el frontend:** el interceptor adjunta el ID Token, válido para el Cognito Authorizer mientras los métodos no exijan custom scopes.
 - **Permisos:** cualquier usuario autenticado puede crear y eliminar productos; no hay autorización por rol.
 
 ## Notas de configuración de repositorio
